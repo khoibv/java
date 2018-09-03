@@ -1,0 +1,34 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  active-mq:
+    image: webcenter/activemq:latest
+    # 8161: admin port
+    # transport (61616: openwire, 5672: amqp, 61613: stomp, 1883: mqtt, 61614: ws)
+    ports:
+      - 8161:8161
+      - 61616:61616
+      - 61613:61613
+    environment:
+      ACTIVEMQ_NAME: "amq"
+      ACTIVEMQ_REMOVE_DEFAULT_ACCOUNT: "True"
+      ACTIVEMQ_ADMIN_LOGIN: "admin"
+      ACTIVEMQ_ADMIN_PASSWORD: "admin"
+
+  rabbit-mq:
+    image: rabbitmq:3.7.2-management
+    hostname: "rabbitmq1"
+    # 15672: admin port
+    # transport (5672: amqp)
+    ports:
+      - 15672:15672
+      - 5672:5672
+    environment:
+      RABBITMQ_DEFAULT_USER: "admin"
+      RABBITMQ_DEFAULT_PASS: "admin"
+      RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
+      RABBITMQ_DEFAULT_VHOST: "/"
+    labels:
+      NAME: "rabbit-mq"

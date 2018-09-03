@@ -1,0 +1,51 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Spring&JMS",
+		"_postman_id": "86e5912d-b272-d9cf-a6e5-e936b7f9b311",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "activemq",
+			"request": {
+				"url": "http://localhost:8080/messaging/activemq",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"to\": \"sample@mail.com\", \"body\": \"This is sample mail, sent from Postman tool\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "rabbitmq",
+			"request": {
+				"url": "http://localhost:8080/messaging/rabbitmq",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"to\": \"sample@mail.com\", \"body\": \"This is sample mail, sent from Postman tool\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
