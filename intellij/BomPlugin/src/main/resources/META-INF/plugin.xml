@@ -1,0 +1,32 @@
+<idea-plugin>
+    <id>vn.com.khoibv.BomPlugin</id>
+    <name>Plugin display name here</name>
+    <vendor email="buivankhoi@gmail.com" url="http://www.khoibv.com">YourCompany</vendor>
+
+    <description><![CDATA[
+    Convert UTF-8 with BOM files to UTF-8 without BOM.<br>
+    <em>BOM: Byte of mark</em>
+    The byte order mark is useless for UTF-8.
+    They only used for UTF-16 so they know which byte order is first.
+    But UTF-8 will allow you to save these BOM for conversion purpose... they are ineffective in encoding the doc itself
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <group id="MyPlugin.SampleMenu" text="BOM Remover" description="Greeting menu">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+            <!-- Add your actions here -->
+            <action id="vn.com.khoibv.BomAction" class="vn.com.khoibv.BomAction" text="BomRemover"
+                    description="BOM remover"/>
+        </group>
+    </actions>
+</idea-plugin>
